@@ -4,6 +4,11 @@ import { usersList } from "../../utils/usersList";
 import userFace from "../../assets/img/userFace.svg";
 import "./homeCard.css";
 
+/**
+ * React Component displaying list of users on Home page
+ * @returns { ReactElement}
+ */
+
 function HomeCard() {
     return (
       <div className="userList">

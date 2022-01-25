@@ -6,7 +6,7 @@ function Navigation() {
       <nav>
         <ul className="header-ul">
           <li className="header-li">
-            <NavLink exact to="/">
+            <NavLink exact="true" to="/">
               Accueil
             </NavLink>
           </li>
