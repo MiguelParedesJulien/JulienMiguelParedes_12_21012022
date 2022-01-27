@@ -9,6 +9,8 @@ import HealthCard from "../../components/healthCard/HealthCard";
 import UserMapper from "../../mapper/userMapper";
 import ActivityMapper from "../../mapper/activityMapper";
 import AverageSessionsMapper from "../../mapper/averageSessionsMapper";
+import AverageSessions from "../../components/averageSessions/AverageSessions";
+import GraphicPerformance from "../../components/graphicPerformance/GraphicPerformance";
 import PerformanceMapper from "../../mapper/performanceMapper";
 import DailyActivity from "../../components/dailyActivity/DailyActivity";
 import "./dashboard.css";
@@ -35,11 +37,15 @@ function Dashboard() {
                <HelloUser prenom={firstName} />
                <section>
                   <div className="graph">
-                     <article className="daily-activity">
-                        <DailyActivity ativite={activity} />
+                     <article>
+                        <DailyActivity activite={activity.data} />
                      </article>
-                     <article className="duree-moy"></article>
-                     <article className="radar"></article>
+                     <article className="duree-moy">
+                        <AverageSessions average={averageSessions} />
+                     </article>
+                     <article className="graphic">
+                        <GraphicPerformance perf={performance} />
+                     </article>
                      <article className="score"></article>
                   </div>
                   <article className="sante">
