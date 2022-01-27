@@ -7,38 +7,52 @@ import { path } from "../../utils/path";
 import HelloUser from "../../components/helloUser/HelloUser";
 import HealthCard from "../../components/healthCard/HealthCard";
 import UserMapper from "../../mapper/userMapper";
+import ActivityMapper from "../../mapper/activityMapper";
+import AverageSessionsMapper from "../../mapper/averageSessionsMapper";
+import PerformanceMapper from "../../mapper/performanceMapper";
+import DailyActivity from "../../components/dailyActivity/DailyActivity";
 import "./dashboard.css";
 
 function Dashboard() {
-  const idUrl = useParams();
-  const data = useFetch(`${path}${idUrl.userId}`, UserMapper);
-  const firstName = data.data.firstName;
-  const keyData = data.data.keyData;
-    return (
-        <>
-          <Header />
-            <main>
-              <LeftSide />
-              <div className="dashboard">
-                <HelloUser prenom={firstName} />
-                  <section>
-                    <div className="graph">
-                      <article className="activite-quot"></article>
-                      <article className="duree-moy"></article>
-                      <article className="radar"></article>
-                      <article className="score"></article>
-                    </div>
-                      <article className="sante">
-                        <HealthCard calorie={keyData} />
-                        <HealthCard prot={keyData} />
-                        <HealthCard glucide={keyData} />
-                        <HealthCard lipide={keyData} />
-                      </article>
-                  </section>
-          </div>
-            </main>
-        </>
-      );
+   const idUrl = useParams();
+   const data = useFetch(`${path}${idUrl.userId}`, UserMapper);
+   const firstName = data.data.firstName;
+   const keyData = data.data.keyData;
+   const activity = useFetch(`${path}${idUrl.userId}/activity`, ActivityMapper);
+   console.log(activity);
+
+   const averageSessions = useFetch(`${path}${idUrl.userId}/average-sessions`, AverageSessionsMapper);
+   console.log(averageSessions);
+
+   const performance = useFetch(`${path}${idUrl.userId}/performance`, PerformanceMapper);
+   console.log(performance);
+   return (
+      <>
+         <Header />
+         <main>
+            <LeftSide />
+            <div className="dashboard">
+               <HelloUser prenom={firstName} />
+               <section>
+                  <div className="graph">
+                     <article className="daily-activity">
+                        <DailyActivity ativite={activity} />
+                     </article>
+                     <article className="duree-moy"></article>
+                     <article className="radar"></article>
+                     <article className="score"></article>
+                  </div>
+                  <article className="sante">
+                     <HealthCard calorie={keyData} />
+                     <HealthCard prot={keyData} />
+                     <HealthCard glucide={keyData} />
+                     <HealthCard lipide={keyData} />
+                  </article>
+               </section>
+            </div>
+         </main>
+      </>
+   );
 }
 
 export default Dashboard;

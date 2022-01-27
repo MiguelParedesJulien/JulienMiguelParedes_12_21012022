@@ -13,6 +13,6 @@ export function useFetch(url, mapperFunction) {
     }
     setLoading(true);
     fetchData();
-  }, [url]);
+  }, [url]); // eslint-disable-line react-hooks/exhaustive-deps
   return { data, isLoading };
 }

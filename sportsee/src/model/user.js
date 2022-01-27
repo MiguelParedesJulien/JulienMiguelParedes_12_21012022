@@ -1,16 +1,5 @@
 export default class User {
-    constructor(
-      id,
-      firstName,
-      lastName,
-      age,
-      score,
-      calorieCount,
-      proteinCount,
-      carbohydrateCount,
-      lipidCount,
-      keyData
-    ) {
+   constructor(id, firstName, lastName, age, score, calorieCount, proteinCount, carbohydrateCount, lipidCount, todayScore, keyData) {
       this.id = id;
       this.firstName = firstName;
       this.lastName = lastName;
@@ -20,6 +9,7 @@ export default class User {
       this.proteinCount = proteinCount;
       this.carbohydrateCount = carbohydrateCount;
       this.lipidCount = lipidCount;
+      this.todayScore = todayScore;
       this.keyData = keyData;
-  } 
+   }
 }
