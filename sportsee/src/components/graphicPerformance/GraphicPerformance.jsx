@@ -1,16 +1,18 @@
 import React from "react";
-import { Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend, RadarChart } from "recharts";
+import { Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadarChart } from "recharts";
 import "./graphicPerformance.css";
 
-function GraphicPerformance(props) {
-   return (
-      <div>
-         <RadarChart outerRadius={90} width={260} height={270} data={props.perf.data}>
-            <PolarAngleAxis dataKey={"kind"} />
-            <PolarRadiusAxis angle={30} domain={[0, 150]} />
-         </RadarChart>
-      </div>
-   );
+function GraphicPerformance({ perf }) {
+  return (
+    <div>
+      <RadarChart outerRadius={90} width={260} height={270} data={perf.data}>
+        <PolarAngleAxis dataKey={"kind"} />
+        <PolarRadiusAxis angle={30} domain={[0, "auto"]} tick={false} axisLine={false} />
+        <PolarGrid />
+        <Radar dataKey={"value"} fill="rgba(255, 1, 1, 0.7)" />
+      </RadarChart>
+    </div>
+  );
 }
 
 export default GraphicPerformance;

@@ -11,6 +11,7 @@ import ActivityMapper from "../../mapper/activityMapper";
 import AverageSessionsMapper from "../../mapper/averageSessionsMapper";
 import AverageSessions from "../../components/averageSessions/AverageSessions";
 import GraphicPerformance from "../../components/graphicPerformance/GraphicPerformance";
+import Score from "../../components/score/Score";
 import PerformanceMapper from "../../mapper/performanceMapper";
 import DailyActivity from "../../components/dailyActivity/DailyActivity";
 import "./dashboard.css";
@@ -20,6 +21,7 @@ function Dashboard() {
   const data = useFetch(`${path}${idUrl.userId}`, UserMapper);
   const firstName = data.data.firstName;
   const keyData = data.data.keyData;
+  const score = data.data.score;
   const activity = useFetch(`${path}${idUrl.userId}/activity`, ActivityMapper);
   console.log(activity);
 
@@ -27,7 +29,7 @@ function Dashboard() {
   console.log(averageSessions);
 
   const performance = useFetch(`${path}${idUrl.userId}/performance`, PerformanceMapper);
-  console.log(performance);
+  console.log(performance.data);
   return (
     <>
       <Header />
@@ -46,6 +48,9 @@ function Dashboard() {
                 </article>
                 <article className="graphic">
                   <GraphicPerformance perf={performance.data} />
+                </article>
+                <article className="score">
+                  <Score score={data.data.score} />
                 </article>
               </div>
             </div>
