@@ -11,7 +11,7 @@ function DailyActivity({ activite }) {
                <li className="poids">
                   <span>{payload[0].value}</span>
                </li>
-               <li className="calorie">
+               <li className="calorie-legend">
                   {" "}
                   <span>{payload[1].value}</span>
                </li>
@@ -34,10 +34,9 @@ function DailyActivity({ activite }) {
    };
    return (
       <div className="daily-activity">
-         <span></span>
          <BarChart width={800} height={450} data={activite.sessions} margin={{ top: 20, right: 0, bottom: 20, left: 20 }}>
             <CartesianGrid strokeDasharray={"3"} vertical={false} />
-            <XAxis dataKey="day" />
+            <XAxis dataKey="day" tickLine={false} />
             <YAxis dataKey={"kilogram"} orientation="right" axisLine={false} tickLine={false} yAxisId={"kilogram"} tickCount={3} domain={["dataMax - 3", "dataMax"]} />
             <YAxis hide={true} />
             <Tooltip content={activityTooltipRender} />

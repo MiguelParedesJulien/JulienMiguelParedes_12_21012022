@@ -11,59 +11,67 @@ import "./healthCard.css";
  * @returns {ReactElement}
  */
 
- function HealthCard(props) {
-    const healthCardFabrique = () => {
-        if (props.calorie) {
-          function makeFloatNumber(nbr) {
-            return Number.parseFloat(nbr).toFixed(3);
-          }
-          let calorieNumber = makeFloatNumber(props.calorie.calorieCount / 1000);
-          return (
-            <div className="nutri-Card">
-              <img src={calories} alt="calorie" />
-              <div>
-                <h3>{calorieNumber}kcal</h3>
-                <p>Calories</p>
-              </div>
-            </div>
-          );
-        }
-        if (props.prot) {
-          return (
-            <div className="nutri-Card">
-              <img src={prot} alt="protéine" />
-              <div>
-                <h3>{props.prot.proteinCount}g</h3>
-                <p>Protéines</p>
-              </div>
-            </div>
-          );
-        }
-        if (props.glucide) {
-          return (
-            <div className="nutri-Card">
-              <img src={glucides} alt="glucide" />
-              <div>
-                <h3>{props.glucide.carbohydrateCount}g</h3>
-                <p>Glucides</p>
-              </div>
-            </div>
-          );
-        }
-        if (props.lipide) {
-          return (
-            <div className="nutri-Card">
-              <img src={lipides} alt="lipide" />
-              <div>
-                <h3>{props.lipide.lipidCount}g</h3>
-                <p>Lipides</p>
-              </div>
-            </div>
-          );
-        }
-      };
-    
-      return <div>{healthCardFabrique()}</div>;
+function HealthCard(props) {
+  const healthCardFabrique = () => {
+    if (props.calorie) {
+      function makeFloatNumber(nbr) {
+        return Number.parseFloat(nbr).toFixed(3);
+      }
+      let calorieNumber = makeFloatNumber(props.calorie.calorieCount / 1000);
+      return (
+        <div className="nutri-card">
+          <div className="calorie">
+            <img src={calories} alt="calorie" />
+          </div>
+          <div>
+            <h3>{calorieNumber}kcal</h3>
+            <p>Calories</p>
+          </div>
+        </div>
+      );
     }
-    
-    export default HealthCard;
+    if (props.prot) {
+      return (
+        <div className="nutri-card">
+          <div className="proteine">
+            <img src={prot} alt="protéine" />
+          </div>
+          <div>
+            <h3>{props.prot.proteinCount}g</h3>
+            <p>Protéines</p>
+          </div>
+        </div>
+      );
+    }
+    if (props.glucide) {
+      return (
+        <div className="nutri-card">
+          <div className="glucide">
+            <img src={glucides} alt="glucide" />
+          </div>
+          <div>
+            <h3>{props.glucide.carbohydrateCount}g</h3>
+            <p>Glucides</p>
+          </div>
+        </div>
+      );
+    }
+    if (props.lipide) {
+      return (
+        <div className="nutri-card">
+          <div className="lipide">
+            <img src={lipides} alt="lipide" />
+          </div>
+          <div>
+            <h3>{props.lipide.lipidCount}g</h3>
+            <p>Lipides</p>
+          </div>
+        </div>
+      );
+    }
+  };
+
+  return <div>{healthCardFabrique()}</div>;
+}
+
+export default HealthCard;

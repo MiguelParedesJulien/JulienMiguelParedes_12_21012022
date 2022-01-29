@@ -1,8 +1,31 @@
 main {
-  display: flex;
+   display: flex;
 }
 
 .dashboard {
-  width: 80%;
-  margin: 3rem 5rem;
+   width: 80%;
+   margin: 3rem 5rem;
+}
+
+.graph-section {
+   display: flex;
+   margin-top: 4rem;
+   justify-content: space-between;
+}
+
+.sante {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.graph {
+   display: flex;
+   flex-direction: column;
+}
+
+.min-graph-card {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
 }
