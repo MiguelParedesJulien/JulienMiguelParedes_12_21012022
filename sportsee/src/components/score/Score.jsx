@@ -1,41 +1,43 @@
 import React from "react";
-import { RadialBarChart, RadialBar, Legend } from "recharts";
+import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from "recharts";
 import "./score.css";
 
 function Score({ score }) {
   console.log(score);
 
   const scoreLegendRender = () => {
-    return (
-      <div className="legendScore">
-        <h3 className="titreLegendScore">Score</h3>
-        <div className="textScoreLegend">
-          {score && <span className="pourcentage">{score[0].score * 100}%</span>}
-          <br />
-          <span className="objectifScore">
-            de votre <br />
-            objectif
-          </span>
-        </div>
-      </div>
-    );
+    return <h3 className="titreLegendScore">Score</h3>;
   };
 
   return (
-    <div>
+    <div className="graph-score">
       {score && (
-        <RadialBarChart
-          width={260}
-          height={270}
-          data={score}
-          innerRadius="80%"
-          outerRadius="92%"
-          startAngle={225}
-          endAngle={225 - (score[0].score * 100 * 360) / 100} // Allows to make dynamic display of the bar which starts at the angle 225
-        >
-          <Legend content={scoreLegendRender} verticalAlign="top" />
-          <RadialBar dataKey={"score"} fill="#FF0000" cornerRadius={10} />
-        </RadialBarChart>
+        <ResponsiveContainer width={"100%"} aspect={0.75}>
+          <RadialBarChart
+            width={260}
+            height={270}
+            data={score}
+            innerRadius="80%"
+            outerRadius="92%"
+            startAngle={225}
+            endAngle={225 - (score[0].score * 100 * 360) / 100} // Allows to make dynamic display of the bar which starts at the angle 225
+          >
+            <circle cx="50%" cy="50%" fill="white" r="90"></circle>
+            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle">
+              <tspan dy="-20" fill="#282D30" className="pourcentage">
+                {score[0].score * 100}%
+              </tspan>
+              <tspan x="50%" dy="26" fill="#74798C" className="objectifScore">
+                de votre
+              </tspan>
+              <tspan x="50%" dy="26" fill="#74798C" className="objectifScore">
+                objectif
+              </tspan>
+            </text>
+            <Legend content={scoreLegendRender} verticalAlign="top" />
+            <RadialBar dataKey={"score"} fill="#FF0000" cornerRadius={10} />
+          </RadialBarChart>
+        </ResponsiveContainer>
       )}
     </div>
   );

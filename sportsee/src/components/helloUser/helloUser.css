@@ -1,9 +1,16 @@
 .hello-titre {
-    font-weight: 500;
-    font-size: 2.5rem;
-    margin-bottom: 1.2rem;
+  font-weight: 500;
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.hello-titre span {
+  color: red;
+}
+
+@media screen and (max-width: 1120px) {
+  .hello-titre {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
   }
-  
-  .hello-titre span {
-    color: red;
-  }
+}
