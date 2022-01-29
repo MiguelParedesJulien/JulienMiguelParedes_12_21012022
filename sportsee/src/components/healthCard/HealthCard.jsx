@@ -1,8 +1,9 @@
-// import React, { useState, useEffect } from "react";
+import React from "react";
 import calories from "../../assets/img/calories.svg";
 import glucides from "../../assets/img/glucides.svg";
-import prot from "../../assets/img/prot.svg";
+import proteine from "../../assets/img/proteine.svg";
 import lipides from "../../assets/img/lipides.svg";
+import PropTypes from "prop-types";
 import "./healthCard.css";
 
 /**
@@ -11,13 +12,13 @@ import "./healthCard.css";
  * @returns {ReactElement}
  */
 
-function HealthCard(props) {
+function HealthCard({ calorie, prot, glucide, lipide }) {
   const healthCardFabrique = () => {
-    if (props.calorie) {
+    if (calorie) {
       function makeFloatNumber(nbr) {
         return Number.parseFloat(nbr).toFixed(3);
       }
-      let calorieNumber = makeFloatNumber(props.calorie.calorieCount / 1000);
+      let calorieNumber = makeFloatNumber(calorie.calorieCount / 1000);
       return (
         <div className="nutri-card">
           <div className="calorie">
@@ -30,40 +31,40 @@ function HealthCard(props) {
         </div>
       );
     }
-    if (props.prot) {
+    if (prot) {
       return (
         <div className="nutri-card">
           <div className="proteine">
-            <img src={prot} alt="protéine" />
+            <img src={proteine} alt="protéine" />
           </div>
           <div>
-            <h3>{props.prot.proteinCount}g</h3>
+            <h3>{prot.proteinCount}g</h3>
             <p>Protéines</p>
           </div>
         </div>
       );
     }
-    if (props.glucide) {
+    if (glucide) {
       return (
         <div className="nutri-card">
           <div className="glucide">
             <img src={glucides} alt="glucide" />
           </div>
           <div>
-            <h3>{props.glucide.carbohydrateCount}g</h3>
+            <h3>{glucide.carbohydrateCount}g</h3>
             <p>Glucides</p>
           </div>
         </div>
       );
     }
-    if (props.lipide) {
+    if (lipide) {
       return (
         <div className="nutri-card">
           <div className="lipide">
             <img src={lipides} alt="lipide" />
           </div>
           <div>
-            <h3>{props.lipide.lipidCount}g</h3>
+            <h3>{lipide.lipidCount}g</h3>
             <p>Lipides</p>
           </div>
         </div>
@@ -73,5 +74,14 @@ function HealthCard(props) {
 
   return <div>{healthCardFabrique()}</div>;
 }
+
+HealthCard.propTypes = {
+  calorie: PropTypes.shape({
+    calorieCount: PropTypes.number,
+    proteinCount: PropTypes.number,
+    carbohydrateCount: PropTypes.number,
+    lipidCount: PropTypes.number,
+  }),
+};
 
 export default HealthCard;

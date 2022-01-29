@@ -52,7 +52,7 @@ main {
 .graphic,
 .score {
   width: 32%;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .score {

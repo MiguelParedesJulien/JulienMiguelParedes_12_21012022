@@ -1,5 +1,6 @@
 import React from "react";
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 import "./score.css";
 
 function Score({ score }) {
@@ -42,5 +43,14 @@ function Score({ score }) {
     </div>
   );
 }
+
+Score.propTypes = {
+  score: PropTypes.arrayOf(
+    PropTypes.shape({
+      score: PropTypes.number,
+      firstName: PropTypes.string,
+    })
+  ),
+};
 
 export default Score;

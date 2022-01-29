@@ -1,5 +1,6 @@
 import React from "react";
 import { LineChart, XAxis, YAxis, Tooltip, Line, Legend, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 import "./averageSessions.css";
 
 function AverageSessions({ average }) {
@@ -48,5 +49,17 @@ function AverageSessions({ average }) {
     </div>
   );
 }
+
+AverageSessions.propTypes = {
+  average: PropTypes.shape({
+    userId: PropTypes.number,
+    sessions: PropTypes.arrayOf(
+      PropTypes.shape({
+        day: PropTypes.string,
+        sessionLength: PropTypes.number,
+      })
+    ),
+  }),
+};
 
 export default AverageSessions;

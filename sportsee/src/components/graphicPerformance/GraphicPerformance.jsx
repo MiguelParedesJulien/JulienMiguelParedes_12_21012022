@@ -1,5 +1,6 @@
 import React from "react";
 import { Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadarChart, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 import "./graphicPerformance.css";
 
 function GraphicPerformance({ perf }) {
@@ -16,5 +17,16 @@ function GraphicPerformance({ perf }) {
     </div>
   );
 }
+
+GraphicPerformance.propTypes = {
+  userId: PropTypes.number,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      kind: PropTypes.string,
+      value: PropTypes.number,
+    })
+  ),
+  kind: PropTypes.objectOf(PropTypes.number),
+};
 
 export default GraphicPerformance;

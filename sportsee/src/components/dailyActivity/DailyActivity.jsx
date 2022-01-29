@@ -1,5 +1,6 @@
 import React from "react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from "recharts";
+import PropTypes from "prop-types";
 import "./dailyActivity.css";
 
 function DailyActivity({ activite }) {
@@ -49,5 +50,16 @@ function DailyActivity({ activite }) {
     </div>
   );
 }
+
+DailyActivity.propTypes = {
+  activite: PropTypes.shape({
+    userId: PropTypes.number,
+    session: PropTypes.shape({
+      day: PropTypes.number,
+      kilogram: PropTypes.number,
+      calories: PropTypes.number,
+    }),
+  }),
+};
 
 export default DailyActivity;
