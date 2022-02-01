@@ -22,7 +22,7 @@ function DailyActivity({ activite }) {
   };
 
   const activityTooltipRender = ({ active, payload }) => {
-    if (active && payload) {
+    if (active && payload && payload.length) {
       return (
         <div className="daily-activity-tooltip">
           <span>{payload[0].value}kg</span>
@@ -37,7 +37,7 @@ function DailyActivity({ activite }) {
     <div className="daily-activity">
       <ResponsiveContainer width="100%" aspect={3}>
         <BarChart data={activite.sessions} margin={{ top: 20, right: 0, bottom: 20, left: 20 }}>
-          <CartesianGrid strokeDasharray={"3"} vertical={false} />
+          <CartesianGrid strokeDasharray={"3 3"} vertical={false} />
           <XAxis dataKey="day" tickLine={false} />
           <YAxis dataKey={"kilogram"} orientation="right" axisLine={false} tickLine={false} yAxisId={"kilogram"} tickCount={3} domain={["dataMax - 3", "dataMax"]} />
           <YAxis hide={true} />

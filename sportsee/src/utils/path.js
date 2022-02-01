@@ -1,10 +1,18 @@
-const pathApi = "http://localhost:3000/user/";
-//const pathMocke = "../../data/";
+const pathMocked = {
+  url: {
+    infoUser(userId) {
+      return `../../data/${userId}/userInfo.json`;
+    },
+    userAverageSession(userId) {
+      return `../../data/${userId}/userAverageSessions.json`;
+    },
+    userActivity(userId) {
+      return `../../data/${userId}/userActivity.json`;
+    },
+    userPerformance(userId) {
+      return `../../data/${userId}/userPerformance.json`;
+    },
+  },
+};
 
-/**
- * when deploying the API, change the path to the corresponding url
- * @type { string }
- */
-
-//export const path = "http://localhost:3000/user";
-export const path = pathApi;
+export const path = pathMocked;

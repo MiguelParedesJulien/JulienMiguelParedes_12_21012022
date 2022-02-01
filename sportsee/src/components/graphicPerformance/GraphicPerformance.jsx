@@ -6,7 +6,7 @@ import "./graphicPerformance.css";
 function GraphicPerformance({ perf }) {
   return (
     <div className="graphicPerformance">
-      <ResponsiveContainer width={"100%"} aspect={0.7}>
+      <ResponsiveContainer width={"100%"} minHeight={270}>
         <RadarChart data={perf.data} outerRadius={"70%"}>
           <PolarAngleAxis dataKey={"kind"} tick={{ fill: "#fff", fontSize: "0.7rem" }} />
           <PolarRadiusAxis angle={30} domain={[0, "auto"]} tick={false} axisLine={false} />

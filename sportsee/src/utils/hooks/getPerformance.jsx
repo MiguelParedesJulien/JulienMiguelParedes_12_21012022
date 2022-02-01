@@ -1,6 +1,6 @@
 import { UseFetch } from "./useFetch";
 import { path } from "../path";
-import PerformanceMapper from "../../mapper/PerformanceMapper";
+import PerformanceMapper from "../../mapper/performanceMapper";
 
 export const getPerformance = (id) => {
   console.log(path.url.userPerformance(id));

@@ -20,7 +20,7 @@ function AverageSessions({ average }) {
   };
   return (
     <div className="average">
-      <ResponsiveContainer width="100%" aspect={0.7}>
+      <ResponsiveContainer width="100%" minHeight={270}>
         <LineChart data={average.sessions}>
           <XAxis dataKey={"day"} axisLine={false} tickLine={false} stroke="rgba(255, 255, 255, 0.5)" />
           <YAxis hide={true} domain={[0, "dataMax + 30"]} />

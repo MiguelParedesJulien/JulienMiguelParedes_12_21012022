@@ -13,7 +13,7 @@ function Score({ score }) {
   return (
     <div className="graph-score">
       {score && (
-        <ResponsiveContainer width={"100%"} aspect={0.75}>
+        <ResponsiveContainer width={"100%"} minHeight={270}>
           <RadialBarChart
             width={260}
             height={270}
