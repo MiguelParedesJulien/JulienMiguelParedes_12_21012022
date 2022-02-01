@@ -18,6 +18,7 @@ import { getUserInfo } from "../../utils/hooks/getUserInfo";
 import { getActivity } from "../../utils/hooks/getActivity";
 import { getPerformance } from "../../utils/hooks/getPerformance";
 import { getAverageSession } from "../../utils/hooks/getAverageSessions";
+import Error from "../error/Error";
 import "./dashboard.css";
 
 function Dashboard() {
@@ -40,42 +41,45 @@ function Dashboard() {
 
   const performance = getPerformance(idUrl.userId);
   console.log(performance);
-
-  return (
-    <>
-      <Header />
-      <main>
-        <LeftSide />
-        <div className="dashboard">
-          {firstName && <HelloUser prenom={firstName} />}
-          <section className="graph-section">
-            <div className="graph">
-              <article className="graph-bar-activity">
-                <DailyActivity activite={activity.data} />
-              </article>
-              <div className="min-graph-card">
-                <article className="duree-moy">
-                  <AverageSessions average={averageSessions.data} />
+  if (data.error || activity.error || averageSessions.error || performance.error) {
+    return <Error />;
+  } else {
+    return (
+      <>
+        <Header />
+        <main>
+          <LeftSide />
+          <div className="dashboard">
+            {firstName && <HelloUser prenom={firstName} />}
+            <section className="graph-section">
+              <div className="graph">
+                <article className="graph-bar-activity">
+                  <DailyActivity activite={activity.data} />
                 </article>
-                <article className="graphic">
-                  <GraphicPerformance perf={performance.data} />
-                </article>
-                <article className="score">
-                  <Score score={data.data.score} />
-                </article>
+                <div className="min-graph-card">
+                  <article className="duree-moy">
+                    <AverageSessions average={averageSessions.data} />
+                  </article>
+                  <article className="graphic">
+                    <GraphicPerformance perf={performance.data} />
+                  </article>
+                  <article className="score">
+                    <Score score={data.data.score} />
+                  </article>
+                </div>
               </div>
-            </div>
-            <article className="sante">
-              <HealthCard calorie={keyData} />
-              <HealthCard prot={keyData} />
-              <HealthCard glucide={keyData} />
-              <HealthCard lipide={keyData} />
-            </article>
-          </section>
-        </div>
-      </main>
-    </>
-  );
+              <article className="sante">
+                <HealthCard calorie={keyData} />
+                <HealthCard prot={keyData} />
+                <HealthCard glucide={keyData} />
+                <HealthCard lipide={keyData} />
+              </article>
+            </section>
+          </div>
+        </main>
+      </>
+    );
+  }
 }
 
 export default Dashboard;
