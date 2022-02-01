@@ -72,7 +72,7 @@ function HealthCard({ calorie, prot, glucide, lipide }) {
     }
   };
 
-  return <div>{healthCardFabrique()}</div>;
+  return <div className="santeCard">{healthCardFabrique()}</div>;
 }
 
 HealthCard.propTypes = {

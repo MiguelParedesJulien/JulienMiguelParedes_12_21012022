@@ -23,7 +23,7 @@ function AverageSessions({ average }) {
       <ResponsiveContainer width="100%" aspect={0.7}>
         <LineChart data={average.sessions}>
           <XAxis dataKey={"day"} axisLine={false} tickLine={false} stroke="rgba(255, 255, 255, 0.5)" />
-          <YAxis hide={true} />
+          <YAxis hide={true} domain={[0, "dataMax + 30"]} />
           <Tooltip
             content={averageTooltipRender}
             cursor={{

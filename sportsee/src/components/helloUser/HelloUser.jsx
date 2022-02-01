@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import "./helloUser.css";
 
 /**
- * React Component dsiplaying the ritgh side bar with info of health
+ * React Component displaying the right side bar with info of health
  * @param {*} props
  * @returns {ReactElement}
  */
 
 function HelloUser({ prenom }) {
+  console.log(prenom);
   return (
     <section>
       <h2 className="hello-titre">

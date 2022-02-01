@@ -45,7 +45,7 @@ function Dashboard() {
                 <article className="duree-moy">
                   <AverageSessions average={averageSessions.data} />
                 </article>
-                <article className="graphic">
+                <article className="radar">
                   <GraphicPerformance perf={performance.data} />
                 </article>
                 <article className="score">

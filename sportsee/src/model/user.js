@@ -4,12 +4,11 @@ export default class User {
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
-    this.score = score;
     this.calorieCount = calorieCount;
     this.proteinCount = proteinCount;
     this.carbohydrateCount = carbohydrateCount;
     this.lipidCount = lipidCount;
-    this.score = score;
     this.keyData = keyData;
+    this.score = score;
   }
 }

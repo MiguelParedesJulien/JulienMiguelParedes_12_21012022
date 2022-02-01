@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
-export function useFetch(url, mapperFunction) {
+export function UseFetch(url, mapperFunction) {
   const [data, setData] = useState({});
-  const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
   useEffect(() => {
-    if (!url) return;
-    async function fetchData() {
-      const response = await fetch(url);
-      const data = await response.json();
-      setData(mapperFunction.convertToUser(data));
-      setLoading(false);
-    }
-    setLoading(true);
-    fetchData();
+    axios
+      .get(url)
+      .then((response) => {
+        console.log(response.data);
+        setData(mapperFunction.convertToUser(response.data));
+      })
+      .catch((err) => {
+        console.log("ERREUR : " + err);
+        setError(true);
+      });
   }, [url]); // eslint-disable-line react-hooks/exhaustive-deps
-  return { data, isLoading };
+  return { data, error };
 }
