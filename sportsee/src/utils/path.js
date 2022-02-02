@@ -1,18 +1,35 @@
-const pathMocked = {
+// const pathMocked = {
+//   url: {
+//     infoUser(userId) {
+//       return `../../data/${userId}/userInfo.json`;
+//     },
+//     userAverageSession(userId) {
+//       return `../../data/${userId}/userAverageSessions.json`;
+//     },
+//     userActivity(userId) {
+//       return `../../data/${userId}/userActivity.json`;
+//     },
+//     userPerformance(userId) {
+//       return `../../data/${userId}/userPerformance.json`;
+//     },
+//   },
+// };
+
+const pathApi = {
   url: {
     infoUser(userId) {
-      return `../../data/${userId}/userInfo.json`;
+      return `http://localhost:3000/user/${userId}`;
     },
     userAverageSession(userId) {
-      return `../../data/${userId}/userAverageSessions.json`;
+      return `http://localhost:3000/user/${userId}/average-sessions`;
     },
     userActivity(userId) {
-      return `../../data/${userId}/userActivity.json`;
+      return `http://localhost:3000/user/${userId}/activity`;
     },
     userPerformance(userId) {
-      return `../../data/${userId}/userPerformance.json`;
+      return `http://localhost:3000/user/${userId}/performance`;
     },
   },
 };
 
-export const path = pathMocked;
+export const path = pathApi;
