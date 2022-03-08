@@ -57,6 +57,6 @@
 
 - SportSee API only contains data for users with id '12' and '18'.
 
-## Auteur
+## Author
 
 - [Miguel Paredes Julien](https://github.com/MiguelParedesJulien)
