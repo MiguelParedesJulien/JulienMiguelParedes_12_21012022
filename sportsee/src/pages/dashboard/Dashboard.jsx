@@ -1,18 +1,12 @@
 import React from "react";
 import Header from "../../components/header/Header";
 import LeftSide from "../../components/leftSide/LeftSide";
-// import { useFetch } from "../../utils/hooks/useFetch";
 import { useParams } from "react-router";
-// import { path } from "../../utils/path";
 import HelloUser from "../../components/helloUser/HelloUser";
 import HealthCard from "../../components/healthCard/HealthCard";
-// import UserMapper from "../../mapper/userMapper";
-// import ActivityMapper from "../../mapper/activityMapper";
-// import AverageSessionsMapper from "../../mapper/averageSessionsMapper";
 import AverageSessions from "../../components/averageSessions/AverageSessions";
 import GraphicPerformance from "../../components/graphicPerformance/GraphicPerformance";
 import Score from "../../components/score/Score";
-// import PerformanceMapper from "../../mapper/performanceMapper";
 import DailyActivity from "../../components/dailyActivity/DailyActivity";
 import { getUserInfo } from "../../utils/hooks/getUserInfo";
 import { getActivity } from "../../utils/hooks/getActivity";
@@ -21,6 +15,10 @@ import { getAverageSession } from "../../utils/hooks/getAverageSessions";
 import Error from "../error/Error";
 import "./dashboard.css";
 
+/**
+ * React component displaying the dashboard page
+ * @returns {ReactElement}
+ */
 function Dashboard() {
   const idUrl = useParams();
   console.log(idUrl);

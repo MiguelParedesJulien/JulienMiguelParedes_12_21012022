@@ -2,6 +2,10 @@ import React from "react";
 import Header from "../../components/header/Header";
 import "./error.css";
 
+/**
+ * React component displaying error page
+ * @returns {reactElement}
+ */
 function Error() {
   return (
     <>

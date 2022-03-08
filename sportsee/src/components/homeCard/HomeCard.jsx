@@ -5,10 +5,9 @@ import userFace from "../../assets/img/userFace.svg";
 import "./homeCard.css";
 
 /**
- * React Component displaying list of users on Home page
+ * React Component displaying list of users on Homepage
  * @returns { ReactElement}
  */
-
 function HomeCard() {
   return (
     <div className="userList">

@@ -3,7 +3,18 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cart
 import PropTypes from "prop-types";
 import "./dailyActivity.css";
 
+/**
+ * React Comoponent displaying the chart bar of daily activity
+ * @param {{userId : number, sessions : array}}
+ * @param {array} sessions : array of object with data for the chart bar
+ * @returns {ReactElement}
+ */
 function DailyActivity({ activite }) {
+  /**
+   * Custom legend to display on chart
+   * @param {object}  payload data of the content to be displayed in the legend
+   * @returns {HTMLElement} text
+   */
   const activityLegendRender = ({ payload }) => {
     return (
       <div className="daily-activity-legend">
@@ -20,7 +31,12 @@ function DailyActivity({ activite }) {
       </div>
     );
   };
-
+  /**
+   * Custom tooltip to display on chart on hover
+   * @param {boolean} active boolean to control if tooltip is visible or not
+   * @param {object}  payload data of the content to be displayed in the legend
+   * @returns {HTMLElement} text
+   */
   const activityTooltipRender = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (

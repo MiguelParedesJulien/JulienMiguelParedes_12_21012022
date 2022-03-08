@@ -3,9 +3,16 @@ import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from "recharts
 import PropTypes from "prop-types";
 import "./score.css";
 
+/**
+ * React Comoponent displaying the chart bar of daily activity
+ * @param {{score: number, firstName: string}}
+ * @returns {ReactElement}
+ */
 function Score({ score }) {
-  console.log(score);
-
+  /**
+   * Custom legend to display on chart
+   * @returns {HTMLElement} text
+   */
   const scoreLegendRender = () => {
     return <h3 className="titreLegendScore">Score</h3>;
   };

@@ -4,10 +4,9 @@ import "./helloUser.css";
 
 /**
  * React Component displaying the right side bar with info of health
- * @param {*} props
+ * @param {string} props
  * @returns {ReactElement}
  */
-
 function HelloUser({ prenom }) {
   console.log(prenom);
   return (

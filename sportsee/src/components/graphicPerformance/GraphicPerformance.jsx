@@ -3,6 +3,13 @@ import { Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadarChart, Responsi
 import PropTypes from "prop-types";
 import "./graphicPerformance.css";
 
+/**
+ * React Comoponent displaying the radar chart
+ * @param {{userId : number, kind : array, data: array}}
+ * @param {array} kind : array of object that are not use
+ * @param {array} data : array of object with data for the radar chart
+ * @returns {ReactElement}
+ */
 function GraphicPerformance({ perf }) {
   return (
     <div className="graphicPerformance">

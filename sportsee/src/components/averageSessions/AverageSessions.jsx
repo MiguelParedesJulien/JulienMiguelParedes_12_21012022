@@ -3,6 +3,12 @@ import { LineChart, XAxis, YAxis, Tooltip, Line, Legend, ResponsiveContainer } f
 import PropTypes from "prop-types";
 import "./averageSessions.css";
 
+/**
+ * React Comoponent displaying the line chart of average sessions
+ * @param {{userId : number, sessions : array}}
+ * @param {array} sessions : array of object with data for the chart line
+ * @returns {ReactElement}
+ */
 function AverageSessions({ average }) {
   const averageTooltipRender = ({ active, payload }) => {
     if (active && payload) {
@@ -15,6 +21,10 @@ function AverageSessions({ average }) {
     return null;
   };
 
+  /**
+   * Displaying the title of the chart
+   * @returns {HTMLElement}
+   */
   const averageLegend = () => {
     return <h3 className="average-legend-title">Durée moyenne des sessions</h3>;
   };

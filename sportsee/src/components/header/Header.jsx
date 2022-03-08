@@ -7,18 +7,17 @@ import "./header.css";
  * React Component displaying header
  * @returns {ReactElement}
  */
-
 function Header() {
-    return (
-      <header>
-        <NavLink exact="true" to="/">
-          <h1 className="logo-container">
-            <img src={logo} alt="logo" />
-          </h1>
-        </NavLink>
-        <Navigation />
-      </header>
-    );
-  }
-  
-  export default Header;
+  return (
+    <header>
+      <NavLink exact="true" to="/">
+        <h1 className="logo-container">
+          <img src={logo} alt="logo" />
+        </h1>
+      </NavLink>
+      <Navigation />
+    </header>
+  );
+}
+
+export default Header;

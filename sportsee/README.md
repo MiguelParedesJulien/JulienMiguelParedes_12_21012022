@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![SportSee](https://res.cloudinary.com/dgfc7mw3u/image/upload/v1646768043/sportsee_JMP_rb8y5m.jpg)
 
-## Available Scripts
+# Develop an analytics Dashboard with React
 
-In the project directory, you can run:
+## Prerequisites for install
 
-### `npm start`
+- You need [Git](https://git-scm.com) to clone the repository
+- You need [Node](https://nodejs.org/en/) (v16.7.0) to run the npm commands
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [React](https://reactjs.org): v17.0.2
+- [React-router-dom](https://reactrouter.com/web/guides/quick-start): v5.2.0  
+  `$ npm install react-router-dom`
+- [Recharts](https://recharts.org/en-US): v2.1.2  
+  `$ npm install recharts`
+- [Axios](https://github.com/axios/axios): v0.21.1  
+  `$ npm install axios`
+- [Prop-types](https://www.npmjs.com/package/prop-types): v15.7.2  
+  `$ npm i prop-types`
+- Recommended text editor: [Visual Studio Code](https://code.visualstudio.com)
 
-### `npm test`
+## Installing and launching Back-End
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository of SportSee back-end:  
+   `git clone https://github.com/MiguelParedesJulien/P12-Backend.git`
 
-### `npm run build`
+2. Inside this back-end repository, install dependencies:  
+   `npm install`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Launch back-end on port 3000 (default port):  
+   `npm run start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installing and launching Front-End
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository of SportSee front-end:  
+   `git clone https://github.com/MiguelParedesJulien/JulienMiguelParedes_12_21012022.git`
 
-### `npm run eject`
+2. Open the folder:
+   `sportsee`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Inside this front-end repository, install dependencies:  
+   `npm install`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Launch front-end on port 3001:  
+   `npm start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Front-end is now rendered at URL `http://localhost:3001`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. URL availables :  
+   `http://localhost:3001/user/12`  
+   `http://localhost:3001/user/18`
 
-## Learn More
+## N.B.:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- SportSee API only contains data for users with id '12' and '18'.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Auteur
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Miguel Paredes Julien](https://github.com/MiguelParedesJulien)
