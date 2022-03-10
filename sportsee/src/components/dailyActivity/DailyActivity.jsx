@@ -42,7 +42,6 @@ function DailyActivity({ activite }) {
       return (
         <div className="daily-activity-tooltip">
           <span>{payload[0].value}kg</span>
-
           <span>{payload[1].value}kCal</span>
         </div>
       );

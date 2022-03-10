@@ -21,24 +21,13 @@ import "./dashboard.css";
  */
 function Dashboard() {
   const idUrl = useParams();
-  console.log(idUrl);
-
   const data = getUserInfo(idUrl.userId);
-  console.log(data);
-
   const firstName = data.data.firstName;
   const keyData = data.data.keyData;
-
-  console.log(firstName);
-
   const activity = getActivity(idUrl.userId);
-  console.log(activity);
-
   const averageSessions = getAverageSession(idUrl.userId);
-  console.log(averageSessions);
-
   const performance = getPerformance(idUrl.userId);
-  console.log(performance);
+
   if (data.error || activity.error || averageSessions.error || performance.error) {
     return <Error />;
   } else {
